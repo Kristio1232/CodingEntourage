@@ -2,6 +2,7 @@ package com.example.randomiconmemorization;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,10 +13,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void buttonClicked(View v){
 
+    public void toOptions(View v){
+        Intent intent = new Intent(this, SettingActivity.class);
+        startActivity(intent);
     }
-    public void buttonClick(View v){
-
+    public void startGame(View v){
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
     }
 }
