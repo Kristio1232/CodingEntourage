@@ -9,13 +9,12 @@ Array to store order of icons
 randomly selects one of the five icons stored
  */
 public class GameRound {
-    private ArrayList<Icon> iconList;
-    private  ArrayList<Icon> order;
+    private ArrayList<Icon> iconList = new ArrayList<Icon>();
+    private  ArrayList<Icon> order = new ArrayList<Icon>();
     //private Icon[] iconList;
     //private Icon[] order = new Icon[0];
 
     public GameRound() {
-        iconList = new ArrayList<Icon>();
         iconList.add(new Icon("Red"));
         iconList.add(new Icon("Blue"));
         iconList.add(new Icon("Green"));

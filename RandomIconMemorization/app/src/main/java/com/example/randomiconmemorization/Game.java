@@ -1,4 +1,7 @@
 package com.example.randomiconmemorization;
+
+import java.util.ArrayList;
+
 /*
 Stores high score
 Starts gameRound
@@ -8,11 +11,20 @@ public class Game {
     private GameRound gameRound;
     private int orderNumber;
     private int points;
+    private boolean nextRound;
     private boolean gameOver;
     public Game(){
         gameRound = new GameRound();
         orderNumber = 0;
         gameOver = false;
+    }
+
+    public boolean isNextRound() {
+        return nextRound;
+    }
+
+    public void setNextRound(boolean nextRound) {
+        this.nextRound = nextRound;
     }
 
     public boolean isGameOver() {
@@ -23,10 +35,13 @@ public class Game {
         return gameRound;
     }
 
+    public ArrayList<Icon> getOrder(){return gameRound.getOrder();}
+
     public void newGameRound(){
         gameRound = new GameRound();
         orderNumber = 0;
         gameOver = false;
+
     }
     /*
     WHen button clicked checks if it is correct
@@ -38,6 +53,7 @@ public class Game {
 
             if (orderNumber == gameRound.getOrderLength()){
                 gameRound.nextLevel();
+                nextRound = true;
                 orderNumber =0;
             }else{
                 orderNumber++;

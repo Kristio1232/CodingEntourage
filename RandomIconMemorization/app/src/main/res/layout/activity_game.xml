@@ -7,64 +7,70 @@
     tools:context=".GameActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/redButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="50dp"
-        android:text="Button"
+        android:onClick="redButtonPressed"
+        android:text="Red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/blueButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="60dp"
-        android:text="Button"
+        android:onClick="blueButtonPressed"
+        android:text="Blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/greenButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
-        android:text="Button"
+        android:onClick="greenButtonPressed"
+        android:text="Green"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/redButton" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/orangeButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="60dp"
-        android:text="Button"
+        android:onClick="orangeButtonPressed"
+        android:text="Orange"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/blueButton" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/purpleButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
-        android:text="Button"
+        android:onClick="purpleButtonPressed"
+        android:text="Purple"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/greenButton" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/brownButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="60dp"
-        android:text="Button"
+        android:onClick="brownButtonPressed"
+        android:text="Brown"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/orangeButton" />
 
     <TextView
         android:id="@+id/highScore"
@@ -93,7 +99,7 @@
         android:text="High score"
         app:layout_constraintEnd_toStartOf="@+id/playerScore"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/purpleButton" />
 
     <TextView
         android:id="@+id/textView6"
@@ -104,6 +110,6 @@
         android:text="Player score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/highScore"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/brownButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
