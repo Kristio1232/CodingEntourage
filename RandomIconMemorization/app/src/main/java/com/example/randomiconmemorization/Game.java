@@ -17,6 +17,7 @@ public class Game {
         gameRound = new GameRound();
         orderNumber = 0;
         gameOver = false;
+        nextRound = false;
     }
 
     public boolean isNextRound() {
@@ -41,7 +42,7 @@ public class Game {
         gameRound = new GameRound();
         orderNumber = 0;
         gameOver = false;
-
+        nextRound = false;
     }
     /*
     WHen button clicked checks if it is correct
@@ -51,7 +52,7 @@ public class Game {
         boolean correctButton = gameRound.checkCorrect(name, orderNumber);
         if (correctButton){
 
-            if (orderNumber == gameRound.getOrderLength()){
+            if (orderNumber == gameRound.getOrderLength()-1){
                 gameRound.nextLevel();
                 nextRound = true;
                 orderNumber =0;

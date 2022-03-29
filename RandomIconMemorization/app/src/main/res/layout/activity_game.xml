@@ -6,67 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/redButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="50dp"
+        android:background="#FD0000"
         android:onClick="redButtonPressed"
         android:text="Red"
+        app:iconTint="#2B2424"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/blueButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="60dp"
+        android:background="#03A9F4"
         android:onClick="blueButtonPressed"
         android:text="Blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/greenButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
+        android:background="#4CAF50"
         android:onClick="greenButtonPressed"
         android:text="Green"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/redButton" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/orangeButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="60dp"
+        android:background="#FF5722"
         android:onClick="orangeButtonPressed"
         android:text="Orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/blueButton" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/purpleButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
+        android:background="#673AB7"
         android:onClick="purpleButtonPressed"
         android:text="Purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/greenButton" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/brownButton"
         android:layout_width="139dp"
         android:layout_height="90dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="60dp"
+        android:background="#472F2F"
         android:onClick="brownButtonPressed"
         android:text="Brown"
         app:layout_constraintEnd_toEndOf="parent"
