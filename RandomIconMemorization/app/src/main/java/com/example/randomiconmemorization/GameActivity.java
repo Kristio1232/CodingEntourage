@@ -2,18 +2,22 @@ package com.example.randomiconmemorization;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class GameActivity extends AppCompatActivity {
 
     private Game game = new Game();
-
+    final Handler handler = new Handler();
     private Button redButton;
     private Button blueButton;
     private Button greenButton;
@@ -35,100 +39,80 @@ public class GameActivity extends AppCompatActivity {
         brownButton = findViewById(R.id.brownButton);
         game.newGameRound();
 
-        showPattern(game.getOrder());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showPattern(game.getOrder());
+            }
+        }, 100);
     }
 
+
+    public void resetColor() {
+
+        redButton.setBackgroundColor(Color.parseColor("#FD0000"));
+        blueButton.setBackgroundColor(Color.parseColor("#03A9F4"));
+        greenButton.setBackgroundColor(Color.parseColor("#4CAF50"));
+        orangeButton.setBackgroundColor(Color.parseColor("#FF5722"));
+        purpleButton.setBackgroundColor(Color.parseColor("#673AB7"));
+        brownButton.setBackgroundColor(Color.parseColor("#472F2F"));
+    }
 
     /*
     Show the pattern
      */
 
-    private void showPattern(ArrayList<Icon> order){
-        for (Icon icon: order){
+    private void showPattern(ArrayList<Icon> order) {
+        for (Icon icon : order) {
 
-            if (icon.getName().equals("Red")){
+
+            if (icon.getName().equals("Red")) {
                 redButton.setBackgroundColor(0xffffffff);
-                try
-                {
-                    Thread.sleep(100);
-                }
-                catch(InterruptedException ex)
-                {
-                    Thread.currentThread().interrupt();
-                }
-                redButton.setBackgroundColor(0xFD0000);
-            }else if (icon.getName().equals("Blue")){
+                redButton.invalidate();
+            } else if (icon.getName().equals("Blue")) {
                 blueButton.setBackgroundColor(0xffffffff);
-                try
-                {
-                    Thread.sleep(100);
-                }
-                catch(InterruptedException ex)
-                {
-                    Thread.currentThread().interrupt();
-                }
-                blueButton.setBackgroundColor(0x03A9F4);
-            }else if (icon.getName().equals("Green")){
+                blueButton.invalidate();
+            } else if (icon.getName().equals("Green")) {
                 greenButton.setBackgroundColor(0xffffffff);
-                try
-                {
-                    Thread.sleep(100);
-                }
-                catch(InterruptedException ex)
-                {
-                    Thread.currentThread().interrupt();
-                }
-                greenButton.setBackgroundColor(0x03A9F4);
-            }else if (icon.getName().equals("Orange")){
-                orangeButton.setBackgroundColor(0x4CAF50);
-                try
-                {
-                    Thread.sleep(100);
-                }
-                catch(InterruptedException ex)
-                {
-                    Thread.currentThread().interrupt();
-                }
-                orangeButton.setBackgroundColor(0xFF5722);
-            }else if (icon.getName().equals("Purple")){
+                greenButton.invalidate();
+            } else if (icon.getName().equals("Orange")) {
+                orangeButton.setBackgroundColor(0xffffffff);
+                orangeButton.invalidate();
+            } else if (icon.getName().equals("Purple")) {
                 purpleButton.setBackgroundColor(0xffffffff);
-                try
-                {
-                    Thread.sleep(100);
-                }
-                catch(InterruptedException ex)
-                {
-                    Thread.currentThread().interrupt();
-                }
-                purpleButton.setBackgroundColor(0x673AB7);
-            }else if (icon.getName().equals("Brown")){
+                purpleButton.invalidate();
+            } else if (icon.getName().equals("Brown")) {
                 brownButton.setBackgroundColor(0xffffffff);
-                try
-                {
-                    Thread.sleep(100);
-                }
-                catch(InterruptedException ex)
-                {
-                    Thread.currentThread().interrupt();
-                }
-                brownButton.setBackgroundColor(0x472F2F);
+                brownButton.invalidate();
             }
+
+            try {
+                Thread.sleep(600);
+
+                resetColor();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+
         }
     }
 
 
-    private void gameButton(String name){
+    private void gameButton(String name) {
         this.game.buttonClicked(name);
         /*
         If game is not over
          */
 
-        if (!game.isGameOver()){
-            if (game.isNextRound()){
+        if (!game.isGameOver()) {
+            if (game.isNextRound()) {
+
                 showPattern(game.getOrder());
+
                 game.setNextRound(false);
             }
-        }else{
+        } else {
             /*
             What Happens when the game is over
              */
