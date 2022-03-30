@@ -2,30 +2,28 @@ package com.example.randomiconmemorization;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
-import java.sql.Time;
+
 import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity {
 
-    private Game game = new Game();
     final Handler handler = new Handler();
+    private Game game = new Game();
     private Button redButton;
     private Button blueButton;
     private Button greenButton;
     private Button orangeButton;
     private Button purpleButton;
     private Button brownButton;
+    private boolean showPattern = false;
 
 
     @Override
@@ -65,43 +63,12 @@ public class GameActivity extends AppCompatActivity {
      */
 
     private void showPattern(ArrayList<Icon> order) {
-        /*
-        for (Icon icon : order) {
-
-
-            if (icon.getName().equals("Red")) {
-                redButton.setBackgroundColor(0xffffffff);
-                redButton.invalidate();
-
-            } else if (icon.getName().equals("Blue")) {
-                blueButton.setBackgroundColor(0xffffffff);
-                blueButton.invalidate();
-            } else if (icon.getName().equals("Green")) {
-                greenButton.setBackgroundColor(0xffffffff);
-                greenButton.invalidate();
-            } else if (icon.getName().equals("Orange")) {
-                orangeButton.setBackgroundColor(0xffffffff);
-                orangeButton.invalidate();
-            } else if (icon.getName().equals("Purple")) {
-                purpleButton.setBackgroundColor(0xffffffff);
-                purpleButton.invalidate();
-            } else if (icon.getName().equals("Brown")) {
-                brownButton.setBackgroundColor(0xffffffff);
-                brownButton.invalidate();
-            }
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            resetColor();
-
-        }*/
-
+        showPattern = true;
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             int i;
             Icon icon;
+
             public void run() {
                 for (i = 0; i < order.size(); i++) {
                     handler.postDelayed(new Runnable() {
@@ -135,9 +102,11 @@ public class GameActivity extends AppCompatActivity {
                     SystemClock.sleep(1000);
                     resetColor();
                 }
+                showPattern = false;
             }
         };
         new Thread(runnable).start();
+
     }
 
 
@@ -165,27 +134,27 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void redButtonPressed(View view) {
-        gameButton("Red");
+        if (!showPattern){gameButton("Red"); }
     }
 
 
     public void blueButtonPressed(View view) {
-        gameButton("Blue");
+        if (!showPattern){gameButton("Blue");};
     }
 
     public void greenButtonPressed(View view) {
-        gameButton("Green");
+        if (!showPattern){gameButton("Green");};
     }
 
     public void orangeButtonPressed(View view) {
-        gameButton("Orange");
+        if (!showPattern){gameButton("Orange");};
     }
 
     public void purpleButtonPressed(View view) {
-        gameButton("Purple");
+        if (!showPattern){gameButton("Purple");};
     }
 
     public void brownButtonPressed(View view) {
-        gameButton("Brown");
+        if (!showPattern){gameButton("Brown");};
     }
 }
