@@ -14,6 +14,7 @@
         android:layout_marginTop="50dp"
         android:background="#FD0000"
         android:onClick="redButtonPressed"
+
         android:text="Red"
         app:iconTint="#2B2424"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +29,7 @@
         android:background="#03A9F4"
         android:onClick="blueButtonPressed"
         android:text="Blue"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,6 +42,7 @@
         android:background="#4CAF50"
         android:onClick="greenButtonPressed"
         android:text="Green"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/redButton" />
 
@@ -52,6 +55,7 @@
         android:background="#FF5722"
         android:onClick="orangeButtonPressed"
         android:text="Orange"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/blueButton" />
 
@@ -64,6 +68,7 @@
         android:background="#673AB7"
         android:onClick="purpleButtonPressed"
         android:text="Purple"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/greenButton" />
 
@@ -76,6 +81,7 @@
         android:background="#472F2F"
         android:onClick="brownButtonPressed"
         android:text="Brown"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/orangeButton" />
 

@@ -8,10 +8,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.sql.Time;
 import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity {
@@ -63,12 +65,14 @@ public class GameActivity extends AppCompatActivity {
      */
 
     private void showPattern(ArrayList<Icon> order) {
+        /*
         for (Icon icon : order) {
 
 
             if (icon.getName().equals("Red")) {
                 redButton.setBackgroundColor(0xffffffff);
                 redButton.invalidate();
+
             } else if (icon.getName().equals("Blue")) {
                 blueButton.setBackgroundColor(0xffffffff);
                 blueButton.invalidate();
@@ -85,17 +89,55 @@ public class GameActivity extends AppCompatActivity {
                 brownButton.setBackgroundColor(0xffffffff);
                 brownButton.invalidate();
             }
-
             try {
-                Thread.sleep(600);
-
-                resetColor();
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            resetColor();
 
+        }*/
 
-        }
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            int i;
+            Icon icon;
+            public void run() {
+                for (i = 0; i < order.size(); i++) {
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            // need to do tasks on the UI thread
+                            icon = order.get(i);
+                            if (icon.getName().equals("Red")) {
+                                redButton.setBackgroundColor(0xffffffff);
+                                redButton.invalidate();
+
+                            } else if (icon.getName().equals("Blue")) {
+                                blueButton.setBackgroundColor(0xffffffff);
+                                blueButton.invalidate();
+                            } else if (icon.getName().equals("Green")) {
+                                greenButton.setBackgroundColor(0xffffffff);
+                                greenButton.invalidate();
+                            } else if (icon.getName().equals("Orange")) {
+                                orangeButton.setBackgroundColor(0xffffffff);
+                                orangeButton.invalidate();
+                            } else if (icon.getName().equals("Purple")) {
+                                purpleButton.setBackgroundColor(0xffffffff);
+                                purpleButton.invalidate();
+                            } else if (icon.getName().equals("Brown")) {
+                                brownButton.setBackgroundColor(0xffffffff);
+                                brownButton.invalidate();
+                            }
+                        }
+                    }, 100);
+                    //Add some downtime
+                    SystemClock.sleep(1000);
+                    resetColor();
+                }
+            }
+        };
+        new Thread(runnable).start();
     }
 
 
