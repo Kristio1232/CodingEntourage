@@ -69,14 +69,12 @@
                 android:id="@+id/HighScoreName1"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/ScoreName1"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
         </TableRow>
 
@@ -85,17 +83,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView36"
+                android:id="@+id/HighScoreName2"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView37"
+                android:id="@+id/ScoreName2"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
         </TableRow>
 
@@ -104,17 +100,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView38"
+                android:id="@+id/HighScoreName3"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView39"
+                android:id="@+id/ScoreName3"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
         </TableRow>
 
@@ -123,17 +117,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView40"
+                android:id="@+id/HighScoreName4"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView41"
+                android:id="@+id/ScoreName4"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
         </TableRow>
 
@@ -142,17 +134,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView42"
+                android:id="@+id/HighScoreName5"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView43"
+                android:id="@+id/ScoreName5"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="TextView"
                 android:textSize="15dp" />
         </TableRow>
 
