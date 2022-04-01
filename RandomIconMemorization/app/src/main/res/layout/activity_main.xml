@@ -34,6 +34,7 @@
         android:id="@+id/Titile"
         android:layout_width="409dp"
         android:layout_height="114dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="sans-serif"
         android:text="Random Icon Memorization "
         android:textAlignment="center"

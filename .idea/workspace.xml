@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3296aa0f-e66d-4f1a-9518-843649969190" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/CodingEntourage.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Andrew maged\.android\avd\Pixel_2_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ldmdn\.android\avd\Pixel_3a_XL_API_29.avd]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -25,10 +25,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/RandomIconMemorization" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunManager" selected="Android Instrumented Tests.All Tests">
@@ -47,6 +50,7 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -95,10 +99,14 @@
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
+      <option name="RETENTION_ENABLED" value="No" />
+      <option name="RETENTION_MAX_SNAPSHOTS" value="2" />
+      <option name="RETENTION_COMPRESS_SNAPSHOTS" value="false" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
