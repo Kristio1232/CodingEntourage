@@ -86,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/orangeButton" />
 
     <TextView
-        android:id="@+id/highScore"
+        android:id="@+id/playerName"
         android:layout_width="139dp"
         android:layout_height="76dp"
         android:layout_marginStart="60dp"
@@ -109,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="90dp"
-        android:text="High score"
+        android:text="Player Name"
         app:layout_constraintEnd_toStartOf="@+id/playerScore"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/purpleButton" />

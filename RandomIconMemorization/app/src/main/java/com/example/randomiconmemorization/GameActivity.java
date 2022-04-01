@@ -25,7 +25,9 @@ public class GameActivity extends AppCompatActivity {
     private Button purpleButton;
     private Button brownButton;
     private TextView score;
+    private TextView name;
     private boolean showPattern = false;
+    String playerName;
 
 
     @Override
@@ -40,8 +42,9 @@ public class GameActivity extends AppCompatActivity {
         purpleButton = findViewById(R.id.purpleButton);
         brownButton = findViewById(R.id.brownButton);
         score = findViewById(R.id.playerScore);
+        name = findViewById(R.id.playerName);
         game.newGameRound();
-
+        playerName = getIntent().getExtras().getString("playerName");
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -67,6 +70,7 @@ public class GameActivity extends AppCompatActivity {
 
     private void showPattern(ArrayList<Icon> order) {
         score.setText(game.getPoints());
+        name.setText(playerName);
         showPattern = true;
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
