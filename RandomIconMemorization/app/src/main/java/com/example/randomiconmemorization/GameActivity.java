@@ -149,7 +149,6 @@ public class GameActivity extends AppCompatActivity {
         if (!showPattern){gameButton("Red"); }
     }
 
-
     public void blueButtonPressed(View view) {
         if (!showPattern){gameButton("Blue");};
     }
@@ -169,4 +168,7 @@ public class GameActivity extends AppCompatActivity {
     public void brownButtonPressed(View view) {
         if (!showPattern){gameButton("Brown");};
     }
+
+
+
 }

@@ -1,9 +1,12 @@
 package com.example.randomiconmemorization;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.*;
 
-public class HighScore {
-    private ArrayList<Score> HighScores;
+public class HighScore implements Parcelable {
+    private ArrayList<Score> HighScores ;
     private int count;
     private int index;
 
@@ -12,8 +15,32 @@ public class HighScore {
         this.count = 0;
         this.index = 0;
     }
+    public HighScore(HighScore highScore) {
+        this.HighScores = highScore.getHighScores();
+        this.count = 0;
+        this.index = 0;
+    }
 
-    public int nameExests(Score score) {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    protected HighScore(Parcel in) {
+        count = in.readInt();
+        index = in.readInt();
+    }
+
+    public static final Creator<HighScore> CREATOR = new Creator<HighScore>() {
+        @Override
+        public HighScore createFromParcel(Parcel in) {
+            return new HighScore(in);
+        }
+
+        @Override
+        public HighScore[] newArray(int size) {
+            return new HighScore[size];
+        }
+    };
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    public int nameExists(Score score) {
 
         for (int j = 0; j < this.HighScores.size(); j++) {
 
@@ -36,7 +63,7 @@ public class HighScore {
 
 
     public void addScores(Score score) {
-        int counter_1 = nameExests(score);
+        int counter_1 = nameExists(score);
         if (counter_1 != -1 && counter_1 != -2) {
             this.HighScores.remove(counter_1);
             this.count = this.count - 1;
@@ -73,5 +100,17 @@ public class HighScore {
 
     public ArrayList<Score> getHighScores() {
         return HighScores;
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
+        parcel.writeInt(count);
+        parcel.writeInt(index);
     }
 }

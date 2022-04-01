@@ -3,14 +3,21 @@ package com.example.randomiconmemorization;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+
 public class GameOverActivity extends AppCompatActivity {
     private String currentPlayerName;
-    private int currentPlayerPoints;
-    private HighScore highScore = new HighScore();
+    private final HighScore highScore = new HighScore();
     private TextView HighScoreName1;
     private TextView HighScoreName2;
     private TextView HighScoreName3;
@@ -21,15 +28,21 @@ public class GameOverActivity extends AppCompatActivity {
     private TextView ScoreName3;
     private TextView ScoreName4;
     private TextView ScoreName5;
-    private TextView[] names = new TextView[] { HighScoreName1, HighScoreName2, HighScoreName3, HighScoreName4, HighScoreName5};
-    private TextView[] Scores = new TextView[] { ScoreName1, ScoreName2, ScoreName3, ScoreName4, ScoreName5};
+    private final TextView[] names = new TextView[] { HighScoreName1, HighScoreName2, HighScoreName3, HighScoreName4, HighScoreName5};
+    private final TextView[] Scores = new TextView[] { ScoreName1, ScoreName2, ScoreName3, ScoreName4, ScoreName5};
     private int index = 0;
+    private int counter = 1;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
         currentPlayerName = getIntent().getExtras().getString("playerName");
-        currentPlayerPoints = getIntent().getExtras().getInt("playerScore");
+        int currentPlayerPoints = getIntent().getExtras().getInt("playerScore");
+
+
         Score newPlayer = new Score();
         newPlayer.add(currentPlayerName, currentPlayerPoints);
         highScore.addScores(newPlayer);
@@ -43,16 +56,19 @@ public class GameOverActivity extends AppCompatActivity {
         Scores[2] = findViewById(R.id.ScoreName3);
         Scores[3] = findViewById(R.id.ScoreName4);
         Scores[4] = findViewById(R.id.ScoreName5);
+
         if(index < 5)
             index ++;
         for(int i = 0; i < index; i++)
         {
-            names[i].setText(highScore.getHighScores().get(i).getScores()[0]);
+            names[i].setText((counter)+")  " + highScore.getHighScores().get(i).getScores()[0]);
+            counter++;
         }
         for(int j = 0; j < index; j++)
         {
             Scores[j].setText( highScore.getHighScores().get(j).getScores()[1]);
         }
+
     }
 
     public void HomeButton(View v) {
@@ -64,4 +80,5 @@ public class GameOverActivity extends AppCompatActivity {
         intent.putExtra("playerName", currentPlayerName);
         startActivity(intent);
     }
+
 }
