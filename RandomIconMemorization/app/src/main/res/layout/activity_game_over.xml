@@ -31,7 +31,11 @@
         android:id="@+id/tableLayout"
         android:layout_width="410dp"
         android:layout_height="234dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="47dp"
+        app:layout_constraintBottom_toTopOf="@+id/HomeButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView31">
@@ -62,7 +66,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/HighScoreName1"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
                 android:text="TextView"
@@ -155,20 +159,22 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/HomeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Home "
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:onClick="HomeButton"
+        app:layout_constraintBottom_toTopOf="@+id/PlayAgainButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/PlayAgainButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play Again"
+        android:onClick="PlayAgainButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
