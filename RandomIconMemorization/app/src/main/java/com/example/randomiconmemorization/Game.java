@@ -21,9 +21,13 @@ public class Game {
         points = 0;
     }
 
-    public String getPoints() {
+    public String getPointsString() {
         String stringPoints= "" + points;
         return stringPoints;
+    }
+
+    public int getPoints() {
+        return points;
     }
 
     public boolean isNextRound() {

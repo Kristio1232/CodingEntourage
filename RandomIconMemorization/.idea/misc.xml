@@ -3,15 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
-        <entry key="..\:/Users/Andrew maged/Documents/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_game.xml" value="0.371875" />
-        <entry key="..\:/Users/Andrew maged/Documents/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_game_over.xml" value="0.33" />
-        <entry key="..\:/Users/Andrew maged/Documents/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_main.xml" value="0.371875" />
-        <entry key="..\:/Users/Andrew maged/Documents/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_setting.xml" value="0.371875" />
-=======
         <entry key="..\:/My Files/Documents/Programing/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_game.xml" value="0.36666666666666664" />
+        <entry key="..\:/My Files/Documents/Programing/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_game_over.xml" value="0.20572916666666666" />
         <entry key="..\:/My Files/Documents/Programing/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
->>>>>>> 4648ec9d9318bcf0d6125971e9fa15c48143cd54
+        <entry key="..\:/My Files/Documents/Programing/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_setting.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/blu3t/Desktop/EECS1022/RandomIconsProject/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/blu3t/Desktop/EECS1022/RandomIconsProject/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_setting.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/cbudd/Documents/GitHub/CodingEntourage/RandomIconMemorization/app/src/main/res/layout/activity_game.xml" value="0.1" />

@@ -69,7 +69,7 @@ public class GameActivity extends AppCompatActivity {
      */
 
     private void showPattern(ArrayList<Icon> order) {
-        score.setText(game.getPoints());
+        score.setText(game.getPointsString());
         name.setText(playerName);
         showPattern = true;
         final Handler handler = new Handler();
@@ -138,6 +138,8 @@ public class GameActivity extends AppCompatActivity {
             What Happens when the game is over
              */
             Intent intent = new Intent(this, GameOverActivity.class);
+            intent.putExtra("playerName", playerName);
+            intent.putExtra("playerScore", game.getPoints());
             startActivity(intent);
         }
     }
