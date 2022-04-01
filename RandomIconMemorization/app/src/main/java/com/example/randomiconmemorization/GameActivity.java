@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class GameActivity extends AppCompatActivity {
     private Button orangeButton;
     private Button purpleButton;
     private Button brownButton;
+    private TextView score;
     private boolean showPattern = false;
 
 
@@ -37,6 +39,7 @@ public class GameActivity extends AppCompatActivity {
         orangeButton = findViewById(R.id.orangeButton);
         purpleButton = findViewById(R.id.purpleButton);
         brownButton = findViewById(R.id.brownButton);
+        score = findViewById(R.id.playerScore);
         game.newGameRound();
 
         handler.postDelayed(new Runnable() {
@@ -63,6 +66,7 @@ public class GameActivity extends AppCompatActivity {
      */
 
     private void showPattern(ArrayList<Icon> order) {
+        score.setText(game.getPoints());
         showPattern = true;
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
@@ -111,6 +115,8 @@ public class GameActivity extends AppCompatActivity {
 
 
     private void gameButton(String name) {
+
+
         this.game.buttonClicked(name);
         /*
         If game is not over

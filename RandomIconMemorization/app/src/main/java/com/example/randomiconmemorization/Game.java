@@ -18,6 +18,12 @@ public class Game {
         orderNumber = 0;
         gameOver = false;
         nextRound = false;
+        points = 0;
+    }
+
+    public String getPoints() {
+        String stringPoints= "" + points;
+        return stringPoints;
     }
 
     public boolean isNextRound() {
@@ -43,6 +49,7 @@ public class Game {
         orderNumber = 0;
         gameOver = false;
         nextRound = false;
+        points = 0;
     }
     /*
     WHen button clicked checks if it is correct
@@ -54,6 +61,7 @@ public class Game {
 
             if (orderNumber == gameRound.getOrderLength()-1){
                 gameRound.nextLevel();
+                points++;
                 nextRound = true;
                 orderNumber =0;
             }else{
