@@ -1,72 +1,79 @@
 package com.example.randomiconmemorization;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
+import java.util.ArrayList;
+
 public class SettingActivity extends AppCompatActivity {
 
-    private static String MY_PREFS = "switch_prefs";
-    private static String THEME_TOGGLE = "theme_toggle";
-    private static String SWITCH_STATUS = "switch_status";
+private Switch aSwitch;
 
-    boolean switch_status;
-    boolean theme_status;
+public static String MY_PREFERENCES = "nightModePrefs";
+public static String KEY_ISNIGHTMODE = "isNightMode";
+SharedPreferences sharedPreferences;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        SwitchMaterial switchBtn = findViewById(R.id.switchBtn);
+        sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
 
-        SharedPreferences myPreferences = getSharedPreferences(MY_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor myEditor = getSharedPreferences(MY_PREFS,MODE_PRIVATE).edit();
+        aSwitch = findViewById(R.id.switchBtn);
 
-        switch_status = myPreferences.getBoolean(SWITCH_STATUS, false);
-        theme_status = myPreferences.getBoolean(THEME_TOGGLE, false);
+        CheckNightModeActivated();
 
-        switchBtn.setChecked(switch_status);
-
-        if (theme_status) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
-        else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-
-        switchBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-                    myEditor.putBoolean(SWITCH_STATUS, true);
-                    myEditor.putBoolean(THEME_TOGGLE, true);
-                    myEditor.apply();
+                    SaveNightModeState(true);
+                    recreate();
                 }
-                else{
+                else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-                    myEditor.putBoolean(SWITCH_STATUS, false);
-                    myEditor.putBoolean(THEME_TOGGLE, false);
-                    myEditor.apply();
+                    SaveNightModeState(false);
+                    recreate();
                 }
             }
         });
+    }
+
+    private void SaveNightModeState(boolean nightMode) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(KEY_ISNIGHTMODE, nightMode);
+        editor.apply();
+    }
+
+    private void CheckNightModeActivated() {
+        if (sharedPreferences.getBoolean(KEY_ISNIGHTMODE, false))
+        {
+            aSwitch.setChecked(true);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else {
+            aSwitch.setChecked(false);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
     public void backButton(View v){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 }
