@@ -86,4 +86,8 @@ public class GameOverActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public static void main(String[] args) {
+
+    }
+
 }
