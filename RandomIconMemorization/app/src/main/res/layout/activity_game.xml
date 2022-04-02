@@ -13,10 +13,9 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="50dp"
         android:background="#FD0000"
+        android:foreground="@mipmap/red_icon_foreground"
         android:onClick="redButtonPressed"
-
         android:text="Red"
-        app:iconTint="#2B2424"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,9 +26,10 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="60dp"
         android:background="#03A9F4"
+        android:foreground="@mipmap/blue_icon_foreground"
+
         android:onClick="blueButtonPressed"
         android:text="Blue"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,9 +40,10 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
         android:background="#4CAF50"
+        android:foreground="@mipmap/green_icon_foreground"
         android:onClick="greenButtonPressed"
-        android:text="Green"
 
+        android:text="Green"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/redButton" />
 
@@ -53,9 +54,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="60dp"
         android:background="#FF5722"
+        android:foreground="@mipmap/orange_icon_foreground"
         android:onClick="orangeButtonPressed"
-        android:text="Orange"
 
+        android:text="Orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/blueButton" />
 
@@ -66,9 +68,10 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
         android:background="#673AB7"
+        android:foreground="@mipmap/purple_icon_foreground"
         android:onClick="purpleButtonPressed"
-        android:text="Purple"
 
+        android:text="Purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/greenButton" />
 
@@ -79,9 +82,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="60dp"
         android:background="#472F2F"
+        android:foreground="@mipmap/brown_icon_foreground"
         android:onClick="brownButtonPressed"
-        android:text="Brown"
 
+        android:text="Brown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/orangeButton" />
 
