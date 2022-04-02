@@ -1,10 +1,13 @@
 package com.example.randomiconmemorization;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,6 +20,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         name = findViewById(R.id.Name);
         setContentView(R.layout.activity_main);
+        SharedPreferences appSettingPrefs = getSharedPreferences("AppSettingPrefs", 0);
+        SharedPreferences.Editor sharedPrefsEdit = appSettingPrefs.edit();
+        Boolean isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
+        Button switchButton = findViewById(R.id.switchButton);
+        if(isNightModeOn){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
     private String getScreenContent(int id){
         View contentView = findViewById(id);

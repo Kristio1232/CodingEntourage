@@ -53,6 +53,7 @@
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:text="Player Name "
+                android:textAlignment="center"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -61,6 +62,7 @@
                 android:layout_width="208dp"
                 android:layout_height="40dp"
                 android:text="Score"
+                android:textAlignment="center"
                 android:textSize="17dp"
                 android:textStyle="bold" />
         </TableRow>
@@ -73,12 +75,14 @@
                 android:id="@+id/HighScoreName1"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/ScoreName1"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
         </TableRow>
 
@@ -90,12 +94,14 @@
                 android:id="@+id/HighScoreName2"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/ScoreName2"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
         </TableRow>
 
@@ -107,12 +113,14 @@
                 android:id="@+id/HighScoreName3"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/ScoreName3"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
         </TableRow>
 
@@ -124,12 +132,14 @@
                 android:id="@+id/HighScoreName4"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/ScoreName4"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
         </TableRow>
 
@@ -141,12 +151,14 @@
                 android:id="@+id/HighScoreName5"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/ScoreName5"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:textAlignment="center"
                 android:textSize="15dp" />
         </TableRow>
 
