@@ -15,6 +15,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private TextView name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor sharedPrefsEdit = appSettingPrefs.edit();
         Boolean isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
         Button switchButton = findViewById(R.id.switchButton);
-        if (!AppInfo.musicStarted()){
+        if (!AppInfo.musicStarted()) {
             PlayBackgroundSound();
             AppInfo.setMusicStarted(true);
         }
 
-        if(isNightModeOn){
+        if (isNightModeOn) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -41,28 +42,30 @@ public class MainActivity extends AppCompatActivity {
         startService(intent);
     }
 
-    private String getScreenContent(int id){
+    private String getScreenContent(int id) {
         View contentView = findViewById(id);
         EditText contentText = (EditText) contentView;
-        String content =contentText.getText().toString();
+        String content = contentText.getText().toString();
         return content;
     }
-    public void toOptions(View v){
+
+    public void toOptions(View v) {
         Intent intent = new Intent(this, SettingActivity.class);
         startActivity(intent);
     }
-    public void startGame(View v){
+
+    public void startGame(View v) {
         String content = getScreenContent(R.id.Name);
         String playerName = "";
-        if (content.length() < 3){
+        if (content.length() < 3) {
             Random random = new Random();
             char randomizedCharacter;
-            for (int i = 0; i < 3; i++){
+            for (int i = 0; i < 3; i++) {
                 randomizedCharacter = (char) (random.nextInt(26) + 'a');
                 playerName += randomizedCharacter;
             }
 
-        }else{
+        } else {
             playerName = content;
         }
         Intent intent = new Intent(this, GameActivity.class);

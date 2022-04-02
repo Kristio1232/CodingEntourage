@@ -7,8 +7,9 @@ Holds Icon Highlighted Image
 Holds Icon Name
  */
 public class Icon {
-    private String name;
-    public Icon(String name){
+    private final String name;
+
+    public Icon(String name) {
         this.name = name;
     }
 

@@ -13,7 +13,8 @@ public class Game {
     private int points;
     private boolean nextRound;
     private boolean gameOver;
-    public Game(){
+
+    public Game() {
         gameRound = new GameRound();
         orderNumber = 0;
         gameOver = false;
@@ -22,7 +23,7 @@ public class Game {
     }
 
     public String getPointsString() {
-        String stringPoints= "" + points;
+        String stringPoints = "" + points;
         return stringPoints;
     }
 
@@ -46,32 +47,35 @@ public class Game {
         return gameRound;
     }
 
-    public ArrayList<Icon> getOrder(){return gameRound.getOrder();}
+    public ArrayList<Icon> getOrder() {
+        return gameRound.getOrder();
+    }
 
-    public void newGameRound(){
+    public void newGameRound() {
         gameRound = new GameRound();
         orderNumber = 0;
         gameOver = false;
         nextRound = false;
         points = 0;
     }
+
     /*
     WHen button clicked checks if it is correct
     Checks if the game
      */
-    public void buttonClicked(String name){
+    public void buttonClicked(String name) {
         boolean correctButton = gameRound.checkCorrect(name, orderNumber);
-        if (correctButton){
+        if (correctButton) {
 
-            if (orderNumber == gameRound.getOrderLength()-1){
+            if (orderNumber == gameRound.getOrderLength() - 1) {
                 gameRound.nextLevel();
                 points++;
                 nextRound = true;
-                orderNumber =0;
-            }else{
+                orderNumber = 0;
+            } else {
                 orderNumber++;
             }
-        }else{
+        } else {
             gameOver = true;
         }
 

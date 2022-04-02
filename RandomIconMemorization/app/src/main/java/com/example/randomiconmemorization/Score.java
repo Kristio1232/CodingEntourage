@@ -2,8 +2,8 @@ package com.example.randomiconmemorization;
 
 import java.util.*;
 
-public class Score implements Comparable<Score>{
-    private String[] scores;
+public class Score implements Comparable<Score> {
+    private final String[] scores;
 
     public Score() {
         this.scores = new String[2];

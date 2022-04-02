@@ -4,7 +4,7 @@ public class AppInfo {
     private static HighScore highScore;
     private static boolean musicStarted = false;
 
-    public static boolean musicStarted(){
+    public static boolean musicStarted() {
         return musicStarted;
     }
 

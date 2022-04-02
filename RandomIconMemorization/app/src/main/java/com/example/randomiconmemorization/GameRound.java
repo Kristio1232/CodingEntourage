@@ -1,6 +1,8 @@
 package com.example.randomiconmemorization;
+
 import java.util.ArrayList;
 import java.util.Random;
+
 /*
 Game Round Object
 Use this to create the game
@@ -9,8 +11,8 @@ Array to store order of icons
 randomly selects one of the five icons stored
  */
 public class GameRound {
-    private ArrayList<Icon> iconList = new ArrayList<Icon>();
-    private  ArrayList<Icon> order = new ArrayList<Icon>();
+    private final ArrayList<Icon> iconList = new ArrayList<Icon>();
+    private final ArrayList<Icon> order = new ArrayList<Icon>();
     //private Icon[] iconList;
     //private Icon[] order = new Icon[0];
 
@@ -23,21 +25,21 @@ public class GameRound {
         iconList.add(new Icon("Brown"));
         nextLevel();
 
-    //{new Icon("Red"), new Icon("Blue"),new Icon("Green"), new Icon("Orange"), new Icon("Purple"), new Icon("Brown")};
+        //{new Icon("Red"), new Icon("Blue"),new Icon("Green"), new Icon("Orange"), new Icon("Purple"), new Icon("Brown")};
     }
 
     public ArrayList<Icon> getOrder() {
         return order;
     }
 
-    public int getOrderLength(){
+    public int getOrderLength() {
         return order.size();
     }
 
     /*
     Randomly selects and adds Icon
      */
-    public void nextLevel(){
+    public void nextLevel() {
         int rnd = new Random().nextInt(iconList.size());
         order.add(iconList.get(rnd));
     }
@@ -45,13 +47,9 @@ public class GameRound {
     /*
     Checks Position if icon matches
      */
-    public boolean checkCorrect(String name, int orderNumber){
+    public boolean checkCorrect(String name, int orderNumber) {
         boolean correct;
-        if (order.get(orderNumber).getName().equals(name)){
-            correct = true;
-        }else{
-            correct = false;
-        }
+        correct = order.get(orderNumber).getName().equals(name);
 
         return correct;
     }

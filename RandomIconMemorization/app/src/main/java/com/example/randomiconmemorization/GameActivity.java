@@ -17,7 +17,8 @@ import java.util.ArrayList;
 public class GameActivity extends AppCompatActivity {
 
     final Handler handler = new Handler();
-    private Game game = new Game();
+    private final Game game = new Game();
+    private String playerName;
     private Button redButton;
     private Button blueButton;
     private Button greenButton;
@@ -27,8 +28,6 @@ public class GameActivity extends AppCompatActivity {
     private TextView score;
     private TextView name;
     private boolean showPattern = false;
-    String playerName;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,29 +145,40 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void redButtonPressed(View view) {
-        if (!showPattern){gameButton("Red"); }
+        if (!showPattern) {
+            gameButton("Red");
+        }
     }
 
     public void blueButtonPressed(View view) {
-        if (!showPattern){gameButton("Blue");};
+        if (!showPattern) {
+            gameButton("Blue");
+        }
     }
 
     public void greenButtonPressed(View view) {
-        if (!showPattern){gameButton("Green");};
+        if (!showPattern) {
+            gameButton("Green");
+        }
     }
 
     public void orangeButtonPressed(View view) {
-        if (!showPattern){gameButton("Orange");};
+        if (!showPattern) {
+            gameButton("Orange");
+        }
     }
 
     public void purpleButtonPressed(View view) {
-        if (!showPattern){gameButton("Purple");};
+        if (!showPattern) {
+            gameButton("Purple");
+        }
     }
 
     public void brownButtonPressed(View view) {
-        if (!showPattern){gameButton("Brown");};
+        if (!showPattern) {
+            gameButton("Brown");
+        }
     }
-
 
 
 }
