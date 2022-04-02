@@ -36,10 +36,10 @@ public class GameOverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_over);
         currentPlayerName = getIntent().getExtras().getString("playerName");
         int currentPlayerPoints = getIntent().getExtras().getInt("playerScore");
-        if (HighScoreInfo.getHighScore() == null){
+        if (AppInfo.getHighScore() == null){
             highScore = new HighScore();
         }else{
-            highScore = HighScoreInfo.getHighScore();
+            highScore = AppInfo.getHighScore();
         }
 
         Score newPlayer = new Score();
@@ -75,13 +75,13 @@ public class GameOverActivity extends AppCompatActivity {
 
     public void HomeButton(View v) {
         Intent intent = new Intent(this, MainActivity.class);
-        HighScoreInfo.setHighScore(highScore);
+        AppInfo.setHighScore(highScore);
         startActivity(intent);
     }
     public void PlayAgainButton(View v) {
         Intent intent = new Intent(this, GameActivity.class);
         intent.putExtra("playerName", currentPlayerName);
-        HighScoreInfo.setHighScore(highScore);
+        AppInfo.setHighScore(highScore);
         startActivity(intent);
     }
 

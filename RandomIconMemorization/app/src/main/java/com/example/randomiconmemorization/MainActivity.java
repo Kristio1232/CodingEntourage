@@ -24,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor sharedPrefsEdit = appSettingPrefs.edit();
         Boolean isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
         Button switchButton = findViewById(R.id.switchButton);
-        PlayBackgroundSound();
+        if (!AppInfo.musicStarted()){
+            PlayBackgroundSound();
+            AppInfo.setMusicStarted(true);
+        }
+
         if(isNightModeOn){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
