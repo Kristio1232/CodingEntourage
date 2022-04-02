@@ -24,12 +24,19 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor sharedPrefsEdit = appSettingPrefs.edit();
         Boolean isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
         Button switchButton = findViewById(R.id.switchButton);
+        PlayBackgroundSound();
         if(isNightModeOn){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
     }
+
+    public void PlayBackgroundSound() {
+        Intent intent = new Intent(MainActivity.this, BackgroundSoundService.class);
+        startService(intent);
+    }
+
     private String getScreenContent(int id){
         View contentView = findViewById(id);
         EditText contentText = (EditText) contentView;
