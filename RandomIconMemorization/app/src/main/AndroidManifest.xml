@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/amongus"
+        android:icon="@mipmap/project2"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/amongus"
+        android:roundIcon="@mipmap/project2"
         android:supportsRtl="true"
         android:theme="@style/Theme.RandomIconMemorization">
         <activity
