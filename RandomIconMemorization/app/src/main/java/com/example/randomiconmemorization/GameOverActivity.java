@@ -40,7 +40,6 @@ public class GameOverActivity extends AppCompatActivity {
             highScore = new HighScore();
         }else{
             highScore = HighScoreInfo.getHighScore();
-            System.out.println(highScore.getHighScores());
         }
 
         Score newPlayer = new Score();

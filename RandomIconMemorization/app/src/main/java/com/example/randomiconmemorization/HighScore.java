@@ -2,31 +2,33 @@ package com.example.randomiconmemorization;
 
 
 
+import android.os.Build;
+
 import java.util.*;
 
 public class HighScore{
-    private ArrayList<Score> HighScores ;
+    private ArrayList<Score> highScores ;
     private int count;
     private int index;
 
     public HighScore() {
-        this.HighScores = new ArrayList<>();
+        this.highScores = new ArrayList<>();
         this.count = 0;
         this.index = 0;
     }
     public HighScore(HighScore highScore) {
-        this.HighScores = highScore.getHighScores();
+        this.highScores = highScore.getHighScores();
         this.count = 0;
         this.index = 0;
     }
 
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+
     public int nameExists(Score score) {
 
-        for (int j = 0; j < this.HighScores.size(); j++) {
+        for (int j = 0; j < this.highScores.size(); j++) {
 
-            String[] score2 = this.HighScores.get(j).getScores();
+            String[] score2 = this.highScores.get(j).getScores();
             String[] score1 = score.getScores();
             String str_score2 = score2[0];
             String str_score1 = score1[0];
@@ -48,48 +50,24 @@ public class HighScore{
 
     public void addScores(Score score)
     {
-        int counter_1 = nameExists(score);
-        if (counter_1 != -1 && counter_1 != -2) {
-            this.HighScores.remove(counter_1);
-            this.count = this.count - 1;
-
+        int nameExists = nameExists(score);
+        if (nameExists != -1 && nameExists != -2) {
+            this.highScores.remove(nameExists);
+            this.highScores.add(score);
+        }else if (nameExists != -2 ){
+            highScores.add(score);
         }
-        if (this.count == 0) {
-            this.HighScores.add(score);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            highScores.sort(Collections.reverseOrder((Score a, Score b)-> a.compareTo(b)));
 
-        } else {
-            for (int i = 0; i < count; i++)
-            {
-                String[] score2 = this.HighScores.get(i).getScores();
-                String[] score1 = score.getScores();
-                int int_score2 = Integer.parseInt(score2[1]);
-                int int_score1 = Integer.parseInt(score1[1]);
-                this.index = 0;
-                if (int_score2 <= int_score1)
-                {
-                    this.HighScores.add(i, score);
-                    this.index = i;
-                    break;
-                }
-
-                if (i == count - 1 && (int_score2 > int_score1))
-                {
-                    this.HighScores.add(i, score);
-                }
-            }
-        }
-        this.count = this.count + 1;
-        if (counter_1 == -2) {
-            this.HighScores.remove(this.index);
-            this.index = 0;
         }
 
     }
 
     public ArrayList<Score> getHighScores() {
-        return HighScores;
+        return highScores;
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 

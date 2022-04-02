@@ -2,7 +2,7 @@ package com.example.randomiconmemorization;
 
 import java.util.*;
 
-public class Score {
+public class Score implements Comparable<Score>{
     private String[] scores;
 
     public Score() {
@@ -21,5 +21,11 @@ public class Score {
 
     public String toString() {
         return Arrays.toString(scores);
+    }
+
+    @Override
+    public int compareTo(Score other) {
+
+        return Integer.compare(Integer.parseInt(this.scores[1]), Integer.parseInt(other.scores[1]));
     }
 }
