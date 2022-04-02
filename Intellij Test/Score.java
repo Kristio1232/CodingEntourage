@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 import java.util.*;
 public class Score {
 
