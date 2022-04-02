@@ -8,39 +8,36 @@
 
     <Button
         android:id="@+id/Start_game"
-        android:layout_width="367dp"
-        android:layout_height="119dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="332dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="20dp"
         android:onClick="startGame"
         android:text="Start Game"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Titile" />
 
     <Button
         android:id="@+id/Options"
-        android:layout_width="166dp"
-        android:layout_height="118dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="177dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="20dp"
         android:onClick="toOptions"
         android:text="Options"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Start_game" />
 
     <TextView
         android:id="@+id/Titile"
-        android:layout_width="409dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="410dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif"
         android:text="Random Icon Memorization "
         android:textAlignment="center"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,11 +45,12 @@
         android:id="@+id/textView2"
         android:layout_width="322dp"
         android:layout_height="31dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="8dp"
         android:text="Enter Name"
         android:textAlignment="center"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Options" />
 
@@ -60,7 +58,6 @@
         android:id="@+id/Name"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:maxLength="3"
@@ -68,6 +65,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
