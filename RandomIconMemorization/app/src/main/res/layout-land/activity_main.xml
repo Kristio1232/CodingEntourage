@@ -6,29 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/Titile"
-        android:layout_width="410dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="104dp"
-        android:fontFamily="sans-serif"
-        android:text="Random Icon Memorization "
-        android:textAlignment="center"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/Start_game"
         android:layout_width="332dp"
         android:layout_height="77dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="8dp"
         android:onClick="startGame"
         android:text="Start Game"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Titile" />
 
@@ -36,12 +22,39 @@
         android:id="@+id/Options"
         android:layout_width="177dp"
         android:layout_height="74dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:onClick="toOptions"
         android:text="Options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Start_game" />
+
+    <TextView
+        android:id="@+id/Titile"
+        android:layout_width="410dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
+        android:text="Random Icon Memorization "
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="322dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="8dp"
+        android:text="Enter Name"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Options" />
 
     <EditText
         android:id="@+id/Name"
@@ -53,22 +66,8 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="322dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="32dp"
-        android:text="Enter Name"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Options" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
